@@ -1,0 +1,63 @@
+<?xml version = "1.0" encoding = "utf-8"?> 
+<!--This is the xml for the widget-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffafc5f4">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="72dip">
+        <ImageView
+            android:id="@+id/timeOfDayImage"
+            android:src="@drawable/cyberpunknight"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" 
+        />
+        <TextView
+            android:id="@+id/timeOfDayText"
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffbdf1eb"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:typeface="sans"
+            android:textSize="32dip"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="12dip" 
+        />
+    </RelativeLayout>
+</LinearLayout>
+
+<!--This is the layout for the widget. Widget layouts are based on RemoteViews which don't support all kinds of layouts or view widgets.-->
+
+<!--A RemoteViews object (and, consequently, an App Widget) can support the following layout classes:
+
+FrameLayout
+LinearLayout
+RelativeLayout
+GridLayout
+And the following widget classes:
+
+AnalogClock
+Button
+Chronometer
+ImageButton
+ImageView
+ProgressBar
+TextView
+ViewFlipper
+ListView
+GridView
+StackView
+AdapterViewFlipper
+Descendants of these classes are not supported.
+
+RemoteViews also supports ViewStub, which is an invisible, zero-sized View you can use to lazily inflate layout resources at runtime.-->

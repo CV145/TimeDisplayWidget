@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!--Will update every 30min-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="288dip"
+    android:minHeight="72dip"
+    android:resizeMode="horizontal|vertical"
+    android:minResizeWidth="144dip"
+    android:updatePeriodMillis="1000" 
+    android:initialLayout="@layout/activity_main"
+     />
+
+<!--The values for the minWidth and minHeight attributes specify the minimum amount of space the App Widget consumes by default. -->
+
+<!--The minResizeWidth and minResizeHeight attributes specify the App Widget's absolute minimum size. These values should specify the size below which the App Widget would be illegible or otherwise unusable. Using these attributes allows the user to resize the widget to a size that may be smaller than the default widget size defined by the minWidth and minHeight attributes. Introduced in Android 3.1.-->
+
+<!--The updatePeriodMillis attribute defines how often the App Widget framework should request an update from the AppWidgetProvider by calling the onUpdate() callback method.-->
+
+<!--The initialLayout attribute points to the layout resource that defines the App Widget layout.-->
+
+<!--The resizeMode attribute specifies the rules by which a widget can be resized. You use this attribute to make homescreen widgets resizeable—horizontally, vertically, or on both axes. Users touch-hold a widget to show its resize handles, then drag the horizontal and/or vertical handles to change the size on the layout grid. Values for the resizeMode attribute include "horizontal", "vertical", and "none". To declare a widget as resizeable horizontally and vertically, supply the value "horizontal|vertical".-->
