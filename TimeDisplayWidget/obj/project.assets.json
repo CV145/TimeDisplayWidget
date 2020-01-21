@@ -1557,11 +1557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\Widget\\Widget.csproj",
+      "projectUniqueName": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\TimeDisplayWidgetRepo\\TimeDisplayWidget\\Widget.csproj",
       "projectName": "Widget",
-      "projectPath": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\Widget\\Widget.csproj",
+      "projectPath": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\TimeDisplayWidgetRepo\\TimeDisplayWidget\\Widget.csproj",
       "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\Widget\\obj\\",
+      "outputPath": "C:\\Users\\carlo\\Desktop\\XamarinProjects\\TimeDisplayWidgetRepo\\TimeDisplayWidget\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

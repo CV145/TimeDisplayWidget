@@ -23,8 +23,6 @@ namespace Widget
         /// </summary>
         List<TimeContainer> timeContainers = new List<TimeContainer>(8);
 
-        //static string UpdateImageAndTextEvent = "UpdateImageAndTextEvent";
-
         //called on update since update is called before OnEnabled
         public void Setup(Context context)
         {
@@ -66,8 +64,6 @@ namespace Widget
 
             Setup(context);
 
-            //Toast.MakeText(context, "Updated", ToastLength.Short).Show();
-
             int numOfIds = appWidgetIds.Length;
 
             for (int i=0; i < numOfIds; i++)
@@ -79,9 +75,6 @@ namespace Widget
 
                 // Create an Intent to update the widget
                 Intent intent = new Intent(context, typeof(AppWidget));
-
-                //This gives the intent an action string which is supposed to call the UpdateTextAndImage method.
-                //intent.SetAction(UpdateImageAndTextEvent);
 
                 intent.PutExtra("widgetUI", widgetUI);
 
@@ -111,46 +104,52 @@ namespace Widget
         void UpdateTextAndImage( Context context, RemoteViews viewsToUpdate)
         {
             int hour = DateTime.Now.Hour;
+            int month = DateTime.Now.Month;
+            int day = DateTime.Now.Day;
+
+            string date = $"{month}/{day}";
+
+            viewsToUpdate.SetTextViewText(Resource.Id.date, date);
 
             if (0 <= hour && hour < 3)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[0].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[0].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[0].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[0].timeText);
             }
             else if (3 <= hour && hour < 6)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[1].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[1].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[1].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[1].timeText);
             }
             else if (6 <= hour && hour < 9)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[2].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[2].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[2].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[2].timeText);
             }
             else if (9 <= hour && hour < 12)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[3].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[3].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[3].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[3].timeText);
             }
             else if (12 <= hour && hour < 15)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[4].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[4].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[4].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[4].timeText);
             }
             else if (15 <= hour && hour < 18)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[5].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[5].timeText); 
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[5].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[5].timeText); 
             }
             else if (18 <= hour && hour < 21)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[6].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[6].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[6].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[6].timeText);
             }
             else if (21 <= hour)
             {
-                viewsToUpdate.SetImageViewResource(Resource.Id.timeOfDayImage, timeContainers[7].imageId);
-                viewsToUpdate.SetTextViewText(Resource.Id.timeOfDayText, timeContainers[7].timeText);
+                viewsToUpdate.SetImageViewResource(Resource.Id.image, timeContainers[7].imageId);
+                viewsToUpdate.SetTextViewText(Resource.Id.timeText, timeContainers[7].timeText);
             }
         }
 
@@ -179,13 +178,6 @@ namespace Widget
         public override void OnReceive(Context context, Intent intent)
         {
             base.OnReceive(context, intent);
-           
-            // Check if the given intent has an UpdateImageAndTextEvent string
-            //if (UpdateImageAndTextEvent.Equals(intent.Action))
-            //{
-            //    RemoteViews widgetUI = (RemoteViews)intent.GetParcelableExtra("widgetUI");
-            //    UpdateTextAndImage( context, widgetUI);
-            //}
         }
     }
 }

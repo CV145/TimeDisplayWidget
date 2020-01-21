@@ -11,15 +11,15 @@
         android:layout_width="fill_parent"
         android:layout_height="72dip">
         <ImageView
-            android:id="@+id/timeOfDayImage"
+            android:id="@+id/image"
             android:src="@drawable/cyberpunknight"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop" 
         />
         <TextView
-            android:id="@+id/timeOfDayText"
-            android:text="0"
+            android:id="@+id/date"
+            android:text="1/10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ffbdf1eb"
@@ -31,7 +31,22 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:paddingLeft="12dip" 
+            android:paddingLeft="12dip"
+            android:paddingTop="20dip" 
+        />
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Evening"
+            android:textSize="12dip"
+            android:paddingLeft="12dip"
+            android:paddingTop="10dip"
+            android:textColor="#ff84ffff"
+            android:gravity="center"
+            android:textStyle="bold|italic"
+            android:fadingEdge="none"
+            android:requiresFadingEdge="none"
         />
     </RelativeLayout>
 </LinearLayout>
